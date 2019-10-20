@@ -6,7 +6,7 @@ function Tile(props) {
         <div className="card">
             {props.id}
             <img id="cardImg" alt={props.image} src={props.image}
-                onClick={() => props.selectTile(props.id)}></img>
+                onClick={() => props.selectTile(props.id)} ></img>
         </div>
     )
 }

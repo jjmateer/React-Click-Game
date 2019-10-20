@@ -12,6 +12,16 @@ class App extends React.Component {
   selectTile = id => {
     const tiles = this.state.tiles.filter(tile => tile.id !== id);
     this.setState({ tiles });
+    this.shuffle()
+  };
+  shuffle = () => {
+    let temp = this.state.tiles.slice();
+    for (let i = temp.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [temp[i], temp[j]] = [temp[j], temp[i]];
+    }
+    this.setState({ tiles: temp });
+    console.log(this.state.tiles)
   };
   render() {
     return (
@@ -23,6 +33,7 @@ class App extends React.Component {
               id={tile.id}
               image={tile.image}
               selectTile={this.selectTile}
+              shuffle={this.shuffle}
             />
           ))}
         </Section>
