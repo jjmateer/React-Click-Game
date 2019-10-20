@@ -4,14 +4,8 @@ import "../styles/Tile.css"
 function Tile(props) {
     return (
         <div className="card">
-            <ul>
-                <li>
-                    <strong>Name:</strong>{props.name}
-                </li>
-                <li>
-                    <strong>Image:</strong>{props.image}
-                </li>
-            </ul>
+            {props.id}
+                    <img id="cardImg" alt={props.image} src={props.image}></img>
         </div>
     )
 }

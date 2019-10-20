@@ -1,82 +1,11 @@
 import React from 'react';
 import "../styles/Section.css";
-import Tile from "./Tile"
-import tiles from "../tiles.json";
-function Section() {
+import Tile from './Tile';
+
+function Section(props) {
     return (
         <div className="Section">
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
-            <Tile
-                name={tiles[0].name}
-                image={tiles[0].image}
-            />
+            {props.children}
         </div>
     );
 }
