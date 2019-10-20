@@ -15,13 +15,13 @@ class App extends React.Component {
     if (tilesFilter[0].selected === false) {
       console.log("Changing to true")
       tilesFilter[0].selected = true;
-      this.addScore();
+      this.state.scores[0].score++
     } else {
       console.log("Reset score")
       for (let i = 0; i < this.state.tiles.length - 1; i++) {
         this.state.tiles[i].selected = false;
       }
-      this.resetScore();
+      this.state.scores[0].score = 0;
     };
     this.shuffle();
   };
@@ -33,14 +33,6 @@ class App extends React.Component {
     }
     this.setState({ tiles: tempArr });
     console.log(this.state.tiles)
-  };
-  addScore = () => {
-    console.log(`User Score: ${this.state.scores[0].score}`)
-    this.state.scores[0].score++
-  };
-  resetScore = () => {
-    console.log(`User Score: ${this.state.scores[0].score}`)
-    this.state.scores[0].score = 0;
   };
   render() {
     return (
@@ -54,8 +46,6 @@ class App extends React.Component {
               selected={tile.selected}
               selectTile={this.selectTile}
               shuffle={this.shuffle}
-              addScore={this.addScore}
-              resetScore={this.resetScore}
             />
           ))}
         </Section>

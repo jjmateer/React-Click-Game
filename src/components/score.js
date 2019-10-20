@@ -1,16 +1,16 @@
-// import React from "react";
+import React from "react";
+import scores from "../score.json";
+class Score extends React.Component {
+state={
+    scores
+}
+    render() {
+        return (
+            <div>
+            User Score: {scores[0].score}
+            </div>
+        )
+    }
+}
 
-// class Score extends React.Component {
-// state={
-//     userScore: 0
-// }
-//     render() {
-//         return (
-//             <div>
-//             {this.state.score}
-//             </div>
-//         )
-//     }
-// }
-
-// export default Score;
+export default Score;
