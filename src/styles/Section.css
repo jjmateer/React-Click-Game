@@ -3,7 +3,7 @@
     height:600px;
     margin:auto;
     margin-top:5%;
-    border:solid black;
+    /* border:solid black; */
     display:grid;
     grid-template-columns: auto auto auto;
 }
