@@ -3,16 +3,24 @@ import Header from "./components/header";
 import Section from "./components/Section"
 import Tile from "./components/Tile"
 import tiles from "./tiles.json";
+import scores from "./score.json";
 import "./styles/App.css";
 
 class App extends React.Component {
   state = {
-    tiles
+    tiles, scores
   };
   selectTile = id => {
     const tilesFilter = this.state.tiles.filter(tile => tile.id === id);
-    tilesFilter[0].selected = true;
-    this.shuffle()
+    if(tilesFilter[0].selected === false){
+      console.log("Changing to true")
+      tilesFilter[0].selected = true;
+      this.addScore();
+    } else {
+      console.log("Reset score")
+      this.resetScore();
+    };
+    this.shuffle();
   };
   shuffle = () => {
     let tempArr = this.state.tiles.slice();
@@ -22,6 +30,12 @@ class App extends React.Component {
     }
     this.setState({ tiles: tempArr });
     console.log(this.state.tiles)
+  };
+  addScore = () => {
+    
+    this.state.scores[0].score++
+  };
+  resetScore = () => {
   };
   render() {
     return (
@@ -35,6 +49,8 @@ class App extends React.Component {
               selected={tile.selected}
               selectTile={this.selectTile}
               shuffle={this.shuffle}
+              addScore={this.addScore}
+              resetScore={this.resetScore}
             />
           ))}
         </Section>
