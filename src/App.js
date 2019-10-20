@@ -12,12 +12,15 @@ class App extends React.Component {
   };
   selectTile = id => {
     const tilesFilter = this.state.tiles.filter(tile => tile.id === id);
-    if(tilesFilter[0].selected === false){
+    if (tilesFilter[0].selected === false) {
       console.log("Changing to true")
       tilesFilter[0].selected = true;
       this.addScore();
     } else {
       console.log("Reset score")
+      for (let i = 0; i < this.state.tiles.length - 1; i++) {
+        this.state.tiles[i].selected = false;
+      }
       this.resetScore();
     };
     this.shuffle();
@@ -32,10 +35,12 @@ class App extends React.Component {
     console.log(this.state.tiles)
   };
   addScore = () => {
-    
+    console.log(`User Score: ${this.state.scores[0].score}`)
     this.state.scores[0].score++
   };
   resetScore = () => {
+    console.log(`User Score: ${this.state.scores[0].score}`)
+    this.state.scores[0].score = 0;
   };
   render() {
     return (
