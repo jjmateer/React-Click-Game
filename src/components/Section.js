@@ -9,6 +9,74 @@ function Section() {
                 name={tiles[0].name}
                 image={tiles[0].image}
             />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
+            <Tile
+                name={tiles[0].name}
+                image={tiles[0].image}
+            />
         </div>
     );
 }

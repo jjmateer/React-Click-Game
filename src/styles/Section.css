@@ -1,6 +1,8 @@
 .Section {
-    width:75%;
+    width:50vw;
     height:80vh;
     margin:auto;
     border:solid black;
+    display:grid;
+    grid-template-columns: auto auto auto;
 }
