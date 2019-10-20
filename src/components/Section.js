@@ -1,6 +1,5 @@
 import React from 'react';
 import "../styles/Section.css";
-import Tile from './Tile';
 
 function Section(props) {
     return (

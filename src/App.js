@@ -9,6 +9,10 @@ class App extends React.Component {
   state = {
     tiles
   };
+  selectTile = id => {
+    const tiles = this.state.tiles.filter(tile => tile.id !== id);
+    this.setState({ tiles });
+  };
   render() {
     return (
       <div>
@@ -18,6 +22,7 @@ class App extends React.Component {
             <Tile
               id={tile.id}
               image={tile.image}
+              selectTile={this.selectTile}
             />
           ))}
         </Section>
