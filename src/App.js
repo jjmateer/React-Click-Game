@@ -10,17 +10,17 @@ class App extends React.Component {
     tiles
   };
   selectTile = id => {
-    const tiles = this.state.tiles.filter(tile => tile.id !== id);
-    this.setState({ tiles });
+    const tilesFilter = this.state.tiles.filter(tile => tile.id === id);
+    tilesFilter[0].selected = true;
     this.shuffle()
   };
   shuffle = () => {
-    let temp = this.state.tiles.slice();
-    for (let i = temp.length - 1; i > 0; i--) {
+    let tempArr = this.state.tiles.slice();
+    for (let i = tempArr.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
-      [temp[i], temp[j]] = [temp[j], temp[i]];
+      [tempArr[i], tempArr[j]] = [tempArr[j], tempArr[i]];
     }
-    this.setState({ tiles: temp });
+    this.setState({ tiles: tempArr });
     console.log(this.state.tiles)
   };
   render() {
@@ -32,6 +32,7 @@ class App extends React.Component {
             <Tile
               id={tile.id}
               image={tile.image}
+              selected={tile.selected}
               selectTile={this.selectTile}
               shuffle={this.shuffle}
             />
