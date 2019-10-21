@@ -28,11 +28,10 @@
     transform: translate3d(4px, 0, 0);
   }
 } */
-.header h1 {
-  /* margin: auto; */
+#logo {
   width: 33%;
   margin-left: 20px;
-  line-height: 150px;
+  line-height: 100%;
   font-size: 3vw;
   color: white;
   text-shadow: 0.1vw 0.1vw 0.5vw black;
@@ -42,18 +41,23 @@
   display:flex;
 }
 #scoreDiv {
-  background:white;
+  /* background:white; */
   font-size:50px;
   line-height:75px;
   width:33%;
   text-align: center;
+  color:white;
 }
 #userAlert {
-  background:gray;
+  /* background:gray; */
   width:33%;
   height:100%;
   margin:auto;
   margin-left:0;
+  font-size:50px;
+  color:white;
+  line-height:150px;
+  text-align: center;
 }
 .scoreDisplays {
   margin:auto;
