@@ -2,36 +2,44 @@
   background: darkblue;
   height: 150px;
   box-shadow: 0.1vw 0.1vw 0.5vw black;
+  display: flex;
 }
 
 .header h1 {
   margin: auto;
+  width: auto;
   margin-left: 20px;
   line-height: 150px;
   font-size: 3vw;
   color: white;
   text-shadow: 0.1vw 0.1vw 0.5vw black;
 }
-
+#scoreDiv {
+  color:white;
+  font-size:50px;
+  margin-right:20px;
+  line-height:50px;
+}
 .Section {
-  width:600px;
-  height:600px;
-  margin:auto;
-  margin-top:5%;
-  display:grid;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  margin-top: 5%;
+  display: grid;
   grid-template-columns: auto auto auto;
 }
 
 .card {
-  max-width:200px;
-  max-height:200px;
-  position:relative;
-  cursor:pointer;
-  margin:5px;
+  max-width: 200px;
+  max-height: 200px;
+  position: relative;
+  cursor: pointer;
+  margin: 5px;
   box-shadow: 0.1vw 0.1vw 0.5vw black;
+  /* font-size:100px; */
 }
 #cardImg {
-  position:absolute;
-  height:100%;
-  width:100%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }

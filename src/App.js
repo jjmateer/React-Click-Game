@@ -13,11 +13,12 @@ class App extends React.Component {
   selectTile = id => {
     const tilesFilter = this.state.tiles.filter(tile => tile.id === id);
     if (tilesFilter[0].selected === false) {
-      console.log("Changing to true")
       tilesFilter[0].selected = true;
       this.state.scores[0].score++
+      if (this.state.scores[0].score > this.state.scores[0].highScore) {
+        this.state.scores[0].highScore++
+      }
     } else {
-      console.log("Reset score")
       for (let i = 0; i < this.state.tiles.length - 1; i++) {
         this.state.tiles[i].selected = false;
       }
