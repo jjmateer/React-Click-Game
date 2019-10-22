@@ -21,8 +21,7 @@ class App extends React.Component {
         ]
       }))
       tilesFilter[0].selected = true;
-      if ( this.state.userInfo[0].score > this.state.userInfo[0].highScore) {
-        // this.state.userInfo[0].highScore++
+      if ( this.state.userInfo[0].score >= this.state.userInfo[0].highScore) {
         this.setState(prevState => ({
           userInfo: [
             ...prevState.userInfo,
@@ -47,8 +46,6 @@ class App extends React.Component {
           prevState.userInfo[0].score = 0
         ]
       }))
-    // this.state.userInfo[1].greeting = "Incorrect"
-    // this.state.userInfo[0].score = 0;
   };
     this.shuffle();
   };
