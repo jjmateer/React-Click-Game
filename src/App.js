@@ -21,7 +21,7 @@ class App extends React.Component {
         ]
       }))
       tilesFilter[0].selected = true;
-      if ( this.state.userInfo[0].score >= this.state.userInfo[0].highScore) {
+      if (this.state.userInfo[0].score >= this.state.userInfo[0].highScore) {
         this.setState(prevState => ({
           userInfo: [
             ...prevState.userInfo,
@@ -46,36 +46,38 @@ class App extends React.Component {
           prevState.userInfo[0].score = 0
         ]
       }))
-  };
+
+    };
     this.shuffle();
   };
-shuffle = () => {
-  let tempArr = this.state.tiles.slice();
-  for (let i = tempArr.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [tempArr[i], tempArr[j]] = [tempArr[j], tempArr[i]];
+  shuffle = () => {
+    let tempArr = this.state.tiles.slice();
+    for (let i = tempArr.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [tempArr[i], tempArr[j]] = [tempArr[j], tempArr[i]];
+    }
+    this.setState({ tiles: tempArr });
+    // console.log(this.state.tiles)
+  };
+  render() {
+    return (
+      <div>
+        <Header />
+        <Section>
+          {this.state.tiles.map(tile => (
+            <Tile
+              key={tile.id}
+              id={tile.id}
+              image={tile.image}
+              selected={tile.selected}
+              selectTile={this.selectTile}
+              shuffle={this.shuffle}
+            />
+          ))}
+        </Section>
+      </div>
+    );
   }
-  this.setState({ tiles: tempArr });
-  // console.log(this.state.tiles)
-};
-render() {
-  return (
-    <div>
-      <Header />
-      <Section>
-        {this.state.tiles.map(tile => (
-          <Tile
-            id={tile.id}
-            image={tile.image}
-            selected={tile.selected}
-            selectTile={this.selectTile}
-            shuffle={this.shuffle}
-          />
-        ))}
-      </Section>
-    </div>
-  );
-}
 }
 
 export default App;
