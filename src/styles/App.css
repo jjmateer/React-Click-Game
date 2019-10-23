@@ -1,10 +1,9 @@
 html {
-  background: linear-gradient(-45deg, black, gray, black);
-  background-size: 400% 400%;
-  animation: gradientBG 10s ease infinite;
+background:url("https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?cs=srgb&dl=astrology-astronomy-background-image-956981.jpg&fm=jpg");
+background-size:cover;
 }
 .header {
-  background: darkblue;
+  background: steelblue;
   height: 10%;
   width: 100%;
   box-shadow: 0.1vw 0.1vw 0.5vw black;
@@ -68,12 +67,26 @@ html {
   font-size: 3vw;
   line-height: 150px;
   text-align: center;
-  text-shadow: 0.1vw 0.1vw 0.5vw black;
+  text-shadow: 0.2vw 0.2vw 0.5vw black;
   animation: slideInFromLeft 1s;
 }
 .scoreDisplays {
   margin: auto;
   width: 100%;
+}
+#instructions {
+  width:auto;
+  height:auto;
+  line-height:200%;
+  font-size:2vw;
+  color:white;
+  text-shadow: 0.1vw 0.1vw 0.5vw black;
+  background:darkblue;
+  text-align:center;
+  margin:auto;
+  background: linear-gradient(-45deg, black, steelblue, darkblue);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
 }
 .Section {
   width: 52.5vh;
@@ -95,6 +108,7 @@ html {
 .card:hover {
   transition: 0.2s;
   transform: scale(1.05);
+  box-shadow: 0.05vw 0.05vw 0.3vw white;
 }
 #cardImg {
   position: absolute;
@@ -134,6 +148,10 @@ html {
     font-size:4vw;
     line-height:50px;
   }
+  #instructions {
+  font-size:3.5vw;
+  }
+
 }
 @media only screen and (max-width: 600px) {
 .Section{
@@ -156,4 +174,7 @@ html {
   height:40%;
   font-size:5vw;
 }
+#instructions {
+  font-size:5vw;
+  }
 }
