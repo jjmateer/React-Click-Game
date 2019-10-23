@@ -8,7 +8,7 @@ import "./styles/App.css";
 
 class App extends React.Component {
   state = {
-    tiles, userInfo
+    tiles, userInfo, isColored: true || false
   };
   selectTile = id => {
     const tilesFilter = this.state.tiles.filter(tile => tile.id === id);
@@ -17,7 +17,8 @@ class App extends React.Component {
         userInfo: [
           ...prevState.userInfo,
           prevState.userInfo[1].greeting = "Correct",
-          prevState.userInfo[0].score += 1
+          prevState.userInfo[0].score += 1,
+          prevState.isColored = true
         ]
       }))
       tilesFilter[0].selected = true;
@@ -25,7 +26,7 @@ class App extends React.Component {
         this.setState(prevState => ({
           userInfo: [
             ...prevState.userInfo,
-            prevState.userInfo[0].highScore = this.state.userInfo[0].score
+            prevState.userInfo[0].highScore = this.state.userInfo[0].score,
           ]
         }))
       }
@@ -43,7 +44,8 @@ class App extends React.Component {
         userInfo: [
           ...prevState.userInfo,
           prevState.userInfo[1].greeting = "Incorrect",
-          prevState.userInfo[0].score = 0
+          prevState.userInfo[0].score = 0,
+          prevState.isColored = false
         ]
       }))
 
@@ -57,12 +59,17 @@ class App extends React.Component {
       [tempArr[i], tempArr[j]] = [tempArr[j], tempArr[i]];
     }
     this.setState({ tiles: tempArr });
-    // console.log(this.state.tiles)
   };
+
+  handleClick = () => {
+    this.setState( { condition : !this.state.condition } );
+}
   render() {
     return (
       <div>
-        <Header />
+        <Header 
+        isColored={this.state.isColored}
+        />
         <Section>
           {this.state.tiles.map(tile => (
             <Tile

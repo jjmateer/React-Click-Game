@@ -1,15 +1,14 @@
 import React from 'react';
 import userInfo from "../userInfo.json";
 import "../styles/App.css";
-function Header() {
-    
+function Header(props) {
     return (
         <header className="header">
             <div className="scoreHolder">
                 <h1 id='logo'>React Click game</h1>
 
-                <div id="userAlert">
-                {userInfo[1].greeting}
+                <div id="userAlert" className={props.isColored ? "correctA" : "incorrectA"}>
+                    {userInfo[1].greeting}
                 </div>
                 <div id="scoreDiv">
                     <div className="scoreDisplays">Current Score: {userInfo[0].score}</div>
@@ -19,5 +18,5 @@ function Header() {
         </header>
     );
 }
-
+ 
 export default Header;
