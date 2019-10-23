@@ -15,6 +15,9 @@ function Header(props) {
                     <div className="scoreDisplays">High Score: {userInfo[0].highScore}</div>
                 </div>
             </div>
+            <div id="instructions">
+                <p></p>
+            </div>
         </header>
     );
 }

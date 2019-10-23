@@ -1,3 +1,8 @@
+html {
+  background: linear-gradient(-45deg, black, gray, black);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
 .header {
   background: darkblue;
   height: 10%;
@@ -13,12 +18,25 @@
   color: red;
   transition: 0.5s;
 }
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 #logo {
@@ -58,7 +76,7 @@
   width: 100%;
 }
 .Section {
-  width: 32.5%;
+  width: 52.5vh;
   min-height: 52.5vh;
   margin: auto;
   margin-top: 5%;
@@ -124,8 +142,6 @@
   max-height:450px;
   margin:0;
   margin-top:10%;
-}
-#logo {
 }
 #userAlert{
   width:100%;
