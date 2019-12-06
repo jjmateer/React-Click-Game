@@ -6,4 +6,9 @@ If the user clicks the same tile twice, their score will reset.
 
 Demo: https://vibrant-hodgkin-5c7465.netlify.com/
 
+## Technology used
+- React.js
+- Node.js
+- CSS3
+
 ![image](https://user-images.githubusercontent.com/50982277/68252370-35147f80-ffda-11e9-942f-db2a3ffb85ba.png)
